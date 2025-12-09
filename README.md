@@ -1,4 +1,4 @@
-# React Native Reviews App
+# Truck Lagbe (React-Native App)
 
 ## Features
 
@@ -119,9 +119,9 @@ If everything is set up correctly, your app should appear on the Android Emulato
 
 ---
 
-## Screenshots / Screen Recording
+## Screenshots / Screen Recording / apk
 
-_(Add screenshots or screen recordings here to demonstrate your implementation)_
+_[https://drive.google.com/drive/folders/1rJLpIiuijHyZ3fBr1n4QIHZKzNl634sd?usp=sharing]_
 
 ---
 
