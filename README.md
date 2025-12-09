@@ -1,3 +1,15 @@
+# Features
+
+- **Drag and Drop:** Easily move items within the interface.  
+- **Full-Screen Modal:** Expand the modal to take up the entire screen.  
+- **Star Breakdown:** Visual representation of ratings by stars.  
+- **Sticky Top Section:** Keeps the top section visible when the modal is in full-screen mode.  
+- **Review Sorting:** Sort review details by date for easy reference.  
+- **Animated Progress Bar:** Smooth animations for progress indicators.  
+- **Countdown Timer:** Built-in countdown functionality.  
+- **Reset Home Screen:** Clear and reset home screen data with a single action.
+- **Filter Reviews by Rating (5->1):** Filter reviews based on their star rating.
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
