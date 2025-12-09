@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 6,
+    gap: 10,
   },
 
   selectedText: {
@@ -129,9 +129,10 @@ const styles = StyleSheet.create({
   dropdown: {
     position: 'absolute',
     top: 28,
-    right: 0,
+    right: 15,
     backgroundColor: '#FFFFFF',
-    padding: 10,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
     borderRadius: 8,
 
     // shadow
