@@ -1,28 +1,58 @@
-# Features
+# React Native Reviews App
 
-- **Drag and Drop:** Easily move items within the interface.  
-- **Full-Screen Modal:** Expand the modal to take up the entire screen.  
-- **Star Breakdown:** Visual representation of ratings by stars.  
-- **Sticky Top Section:** Keeps the top section visible when the modal is in full-screen mode.  
-- **Review Sorting:** Sort review details by date for easy reference.  
-- **Animated Progress Bar:** Smooth animations for progress indicators.  
-- **Countdown Timer:** Built-in countdown functionality.  
+## Features
+
+- **Drag and Drop:** Easily move the review panel within the interface.
+- **Full-Screen Modal:** Expand the modal to take up the entire screen.
+- **Star Breakdown:** Visual representation of ratings from 5⭐ → 1⭐.
+- **Sticky Top Section:** Top section (overall rating, star breakdown, driver info) stays fixed when the modal is full-screen.
+- **Review Sorting:** Sort review details by date for easy reference.
+- **Animated Progress Bar:** Smooth animations for progress indicators.
+- **Countdown Timer:** Built-in countdown functionality.
 - **Reset Home Screen:** Clear and reset home screen data with a single action.
-- **Filter Reviews by Rating (5->1):** Filter reviews based on their star rating.
+- **Filter Reviews by Rating (5→1):** Filter reviews based on star rating.
 
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+---
 
-# Getting Started
+## Technical Overview
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+This project is a **React Native** application developed using **TypeScript** and bootstrapped with `@react-native-community/cli`. It is compatible with both **Android** and **iOS**.
 
-## Step 1: Start Metro
+### Key Technical Decisions
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+- **Draggable Review Panel:** Implemented using `@gorhom/bottom-sheet` for smooth, gesture-driven animations.
+- **Full-Screen Expansion:** The bottom sheet supports snap points for collapsed, half, and full-screen modes.
+- **Sticky Header on Scroll:** Achieved by separating the header from the scrollable review list, ensuring the top section remains fixed while reviews scroll underneath.
+- **State Management:** Local component state with `useState` and `useRef` for tracking expanded/collapsed modes. For global state I used `redux-toolkit`.
+- **Animations:** Leveraged `react-native-reanimated` for smooth gesture transitions and progress bar animations.
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+---
 
-```sh
+## Getting Started
+
+### Step 1: Install Dependencies
+
+Clone the repository:
+
+```bash
+git clone git@github.com:NishanChakma/truck-lagbe.git
+```
+
+Install dependencies:
+
+```bash
+# Using npm
+npm install
+
+# OR using Yarn
+yarn install
+```
+
+### Step 2: Run Metro
+
+Start the React Native Metro bundler:
+
+```bash
 # Using npm
 npm start
 
@@ -30,13 +60,11 @@ npm start
 yarn start
 ```
 
-## Step 2: Build and run your app
+### Step 3: Build and Run the App
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+**Android:**
 
-### Android
-
-```sh
+```bash
 # Using npm
 npm run android
 
@@ -44,68 +72,70 @@ npm run android
 yarn android
 ```
 
-### iOS
+**iOS:**  
+Make sure CocoaPods dependencies are installed:
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
+```bash
+# Install CocoaPods (first time only)
 bundle install
-```
 
-Then, and every time you update your native dependencies, run:
-
-```sh
+# Install pod dependencies
 bundle exec pod install
-```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+# Run app
 npm run ios
-
-# OR using Yarn
+# OR
 yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+If everything is set up correctly, your app should appear on the Android Emulator, iOS Simulator, or your connected device.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+---
 
-## Step 3: Modify your app
+## Implementation Details
 
-Now that you have successfully run the app, let's make changes!
+### Draggable Behavior
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+- The review panel can be dragged from bottom to top using gestures.
+- Snap points define **collapsed**, **half-expanded**, and **full-screen** positions.
+- Smooth animations handled via `react-native-reanimated` and `@gorhom/bottom-sheet`.
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+### Full-Screen Expansion
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+- Users can drag the panel or tap an expand button.
+- Full-screen mode displays all top info (overall rating, star breakdown, driver info).
+- Collapse and half-screen states are supported for flexibility.
 
-## Congratulations! :tada:
+### Sticky Header on Scroll
 
-You've successfully run and modified your React Native App. :partying_face:
+- The top section becomes **sticky** when the panel is full-screen.
+- Only the reviews list below scrolls, providing a natural UX.
 
-### Now what?
+### Reviews Section
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+- Displays a **list of reviews** with stars, text, and date/tags.
+- Includes **empty state** and **loading state** placeholders for better UX.
+- Users can filter reviews by star rating (5⭐ → 1⭐).
 
-# Troubleshooting
+---
 
-- Make sure your react native environment setup is up to date.
-- Android : gradle jdk must be zulu-17 (settings > build, execution, deployment > build tools > gradle )
-- If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+## Screenshots / Screen Recording
 
-# Learn More
+_(Add screenshots or screen recordings here to demonstrate your implementation)_
 
-To learn more about React Native, take a look at the following resources:
+---
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+## Troubleshooting
+
+- Ensure your React Native environment is up to date.
+- **Android:** Use Gradle JDK version `zulu-17`.
+- **iOS:** Make sure CocoaPods are installed and up to date.
+
+---
+
+## Learn More
+
+- [React Native Documentation](https://reactnative.dev/)
+- [React Native Basics](https://reactnative.dev/docs/getting-started)
+- [React Native Blog](https://reactnative.dev/blog)
+- [GitHub Repository](https://github.com/facebook/react-native)
