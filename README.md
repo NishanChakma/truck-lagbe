@@ -84,7 +84,9 @@ You've successfully run and modified your React Native App. :partying_face:
 
 # Troubleshooting
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+- Make sure your react native environment setup is up to date.
+- Android : gradle jdk must be zulu-17 (settings > build, execution, deployment > build tools > gradle )
+- If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
 
 # Learn More
 
