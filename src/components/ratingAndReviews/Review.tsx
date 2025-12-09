@@ -80,6 +80,7 @@ const Review: React.FC = () => {
       showsVerticalScrollIndicator={false}
       contentContainerStyle={styles.container}
       ListEmptyComponent={<EmptyState />}
+      style={{ paddingBottom: 20 }}
     />
   );
 };
@@ -99,7 +100,7 @@ const EmptyState = () => (
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 20,
-    paddingBottom: 20,
+    paddingBottom: 40,
   },
   card: {
     padding: 10,
