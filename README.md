@@ -121,7 +121,7 @@ If everything is set up correctly, your app should appear on the Android Emulato
 
 ## Screenshots / Screen Recording / apk
 
-_[https://drive.google.com/drive/folders/1rJLpIiuijHyZ3fBr1n4QIHZKzNl634sd?usp=sharing]_
+- [Google Drive Link](https://drive.google.com/drive/folders/1rJLpIiuijHyZ3fBr1n4QIHZKzNl634sd?usp=sharing)
 
 ---
 
